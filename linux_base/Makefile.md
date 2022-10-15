@@ -1,28 +1,32 @@
 # Makefile
 
-一、变量
+1.变量
 ---
-自定义变量：
+#### 1.1自定义变量：
+
 =            延迟赋值
 :=           立即赋值
 ？=        空赋值
 +=         追加赋值
 
-自动化变量：
+#### 1.2 自动化变量：
+
 $<         第一个依赖文件
 $^         全部依赖文件
 $@        目标
 
-模式匹配
+#### 1.3 模式匹配
+
 %:          匹配任意多个非空字符(类似于shell的通配符*)
 
-默认规则
+#### 1.4 默认规则
+
 .o文件默认使用.c文件进行编译
 
 
 
 例子1： 编译1.c main.c 生成可执行文件main
-```c
+```makefile
 main:1.o main.o
     gcc -o main main.o 1.o
 
@@ -38,7 +42,7 @@ clean:
 ```
 
 例子2：使用变量
-```c
+```makefile
 CC?=gcc
 TARGET=main
 OBJS=main.o 1.o
@@ -58,7 +62,7 @@ clean:
 ```
 
 例子3：使用模式匹配
-```c
+```makefile
 CC?=gcc
 TARGET?=main
 OBJS?=main.o 1.o
@@ -76,7 +80,7 @@ clean:
 ```
 
 例子4：默认规则.o默认由.c生成
-```c
+```makefile
 CC?=gcc
 TARGET?=main
 OBJS?=main.o 1.o
@@ -92,11 +96,12 @@ clean:
 
 ```
 
-二、@作用
+2.@作用
 ---
 `@echo`和`echo`区别
 ①
-```c
+
+```makefile
 all:
     echo "test"
 ```
@@ -105,7 +110,7 @@ echo "test"
 test
 
 ②
-```c
+```makefile
 all:
     @echo "test"
 ```
@@ -113,9 +118,10 @@ all:
 test
 
 
-三、函数
+3.函数
 ---
-①模式替换
+#### 3.1 模式替换
+
 `$(patsubst PATTERN,REPLACEMENT,TEXT)`
 功能：搜索TEXT中的单词，符合PATTERN中的则替换为REPLACEMENT
 
@@ -128,7 +134,8 @@ test
 `$(patsubst %.o,%.c,$(objects)) `
 
 ----------
-②获取文件名函数
+#### 3.2 获取文件名函数
+
 `$(wildcard PATTERN)`
 函数功能：列出当前目录下所有符合模式“ PATTERN”格式的文件名。
 
@@ -138,27 +145,31 @@ test
 
 ----------
 
-③循环函数------通常与`wildcard函数连用`
+#### 3.3 循环函数
+
 `$(foreach VAR,LIST,TEXT)`
 
 函数功能：把LIST中使用空格分割的单词依次取出赋值给变量VAR，然后执行TEXT表达式。
 
+> 通常与`wildcard函数连用`
+
 示例：
-```c
+```makefile
 DIRS?=a b c d
-$(foreach dir,$(DIRS),$(wildcard $(dir)/*.c))
+$(foreach dir,$(DIRS),$(wildcard $(dir)/*.c))   #循环取出a,b,c,d目录下所有.c文件
 ```
-循环取出a,b,c,d目录下所有.c文件
+
 
 ----------
 
-④取文件函数
+#### 3.4 取文件函数
+
 `$(notdir src/foo.c hacks)`
 函数说明：从文件名序列“ NAMES…”中取出非目录部分。目录部分是指最后一个斜线（“ /”）（包括斜线）之前的部分。
 
 示例：
-```c
-DIRS?=a b c d //四个目录
+```makefile
+DIRS?=a b c d #四个目录
 FILES?=$(notdir $(foreach dir,$(DIRS),$(wildcard $(dir)/*c)))
 
 .PHONY:all
