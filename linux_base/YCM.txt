@@ -1,0 +1,29 @@
+解决应用商店无法更新，首先卸载，然后下载最新的
+sudo snap install snap-store --edge
+
+
+1.解决GitHub无法访问办法
+①在https://ipaddress.com/website/github.com中搜索github.com
+②sudo vi /etc/hosts
+加入140.82.113.3 github.com
+146.75.77.194  github.global.ssl.fastly.net
+
+
+2.安装插件Vundle:
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+3.
+cd ~/.vim/bundle
+git clone https://github.com/valloric/YouCompleteMe
+
+
+5.
+sudo apt install build-essential cmake vim-nox python3-dev
+sudo apt install mono-complete golang nodejs default-jdk npm
+
+cd ~/.vim/bundle/YouCompleteMe
+sudo git submodule update --init --recursive --progress
+
+
+
+python3 install.py --clangd-completer --verbose
