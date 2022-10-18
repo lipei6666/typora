@@ -7,7 +7,7 @@ set nocompatible
 set cindent
 syntax on
 set backspace=2
-
+set mouse=a
 cmap Wq wq
 
 

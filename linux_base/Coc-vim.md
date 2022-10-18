@@ -59,7 +59,7 @@ sudo mv vim/ usr/local/lib
 Plugin 'neoclide/coc.nvim'
 ```
 
-如果安装失败: `yarn install`  `yarn build`
+如果安装失败: `yarn install`  
 
 
 
