@@ -131,3 +131,99 @@ int main()
 }
 ```
 
+
+
+
+
+
+
+```c
+#ifndef __TEST_H
+#define __TEST_H
+
+
+
+typedef struct animal{
+	struct fun_table *vptr;
+	char name[20];
+	int  age;
+}animal;
+
+struct fun_table {
+	void (*animal_print) (animal *obj);
+};
+
+typedef struct dag{
+	struct animal parent;
+	int len;
+}dag;
+
+
+void animal_vprint(animal *obj);
+void animal_print(animal *obj);
+void animal_init(animal *obj,const char *name,int age);
+void dag_init(dag *obj,const char *name,int age,int len);
+#endif 
+
+```
+
+```c
+#include "test.h"
+#include <stdio.h>
+#include <string.h>
+
+
+void animal_init(animal *obj,const char *name,int age)
+{
+	/* 1.创建虚函数表必须为静态变量 */
+ 	static struct fun_table animal_table;
+	animal_table.animal_print=animal_print;
+
+	/* 2.初始化结构体 */
+	obj->age=age;
+	obj->vptr=&animal_table;
+	strcpy(obj->name,name);	
+}
+
+
+
+void animal_vprint(animal *obj)
+{
+	printf("%s,%d\n",obj->name,obj->age);
+}
+
+void animal_print(animal *obj)
+{
+	obj->vptr->animal_print(obj);
+}
+
+void dag_init(dag *obj,const char *name,int age ,int len)
+{
+	animal_init(&obj->parent,name,age);
+
+	static struct fun_table dag_table;
+	dag_table.animal_print=animal_print;
+
+	obj->len=len;
+	obj->parent.vptr=&dag_table;
+
+}
+
+
+
+
+int main()
+{
+	animal L;
+	
+	animal_init(&L,"yang",10);
+	animal_vprint(&L);
+
+	dag D;
+	dag_init(&D, "xu", 20, 30);
+
+	animal_vprint((animal *)&D);
+	return 0;
+}
+```
+
