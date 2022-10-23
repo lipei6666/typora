@@ -20,3 +20,8 @@ mount -t nfs -o nolock,nfsvers=3 192.168.10.100:/home/lipei/data/nfs get/
 umount get
 ```
 
+
+
+
+
+ifconfig eth0 192.168.10.50  
