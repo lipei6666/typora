@@ -70,3 +70,38 @@ Plugin 'neoclide/coc.nvim'
 :CocInstall coc-clangd  
 ```
 
+
+
+## 5.clash
+
+sudo vim /etc/systemd/system/clash.service
+
+```shell
+[Unit]
+Description=Clash service
+After=network.target
+
+[Service]
+Type=simple
+User=lipei
+ExecStart=/home/lipei/Clash/clash
+Restart=on-failure
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+
+```shell
+# 重载服务
+sudo systemctl daemon-reload
+# 开机启动
+sudo systemctl enable clash
+# 启动服务
+sudo systemctl start clash
+# 查看服务状态
+sudo systemctl status clash
+```
+
