@@ -25,3 +25,13 @@ umount get
 
 
 ifconfig eth0 192.168.10.50  
+
+
+
+网络图标消失：
+
+```shell
+sudo nmcli network off
+sudo nmcli network on
+```
+
