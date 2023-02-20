@@ -1,5 +1,3 @@
-
-
 # 1.为什么用git？
 
 
@@ -107,6 +105,20 @@ $ git remote -v #查看绑定远程仓库信息
 ```shell
 $ git push shortname <分支名>
 ```
+
+## 4.4从远程仓库获取最新版本
+
+```shell
+$ git fetch shortname master
+```
+
+## 4.5比较远程仓库和本地仓库区别
+
+```shell
+$ git merge master
+```
+
+
 
 
 
