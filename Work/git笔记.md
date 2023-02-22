@@ -48,6 +48,9 @@ $ git reset HEAD~1		  #默认参数，代表本地文件不改变，退回缓存
 $ git reset --soft HEAD~1 #退回仓库上一个版本，缓存区和本地源码不变
 
 $ git reset --hard HEAD~1 #本地源码，缓存区，仓库都退回上一个版本
+
+#知道log某一个版本的commit号，退回
+$git reset --hard commitID
 ```
 
 ## 3.6查看仓库当前状态
@@ -77,8 +80,20 @@ $ git checkout -- <file>  #撤销本地文件的修改
 $ git rm <file>
 
 #误删了本地文件，但仓库还有
-$ git chekout -- <file> #恢复本地文件
+$ git checkout -- <file> #恢复本地文件
 ```
+
+## 3.9查看修改内容
+
+```shell
+#查看具体到每个commit修改内容
+$git log -p
+
+#当前工作区与历史某一个版本之间的改动
+$git diff 某个版本的commitID -- <file>
+```
+
+
 
 
 
