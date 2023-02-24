@@ -125,6 +125,8 @@ $ git push shortname <分支名>
 
 ```shell
 $ git fetch shortname master
+
+$ git pull
 ```
 
 ## 4.5比较远程仓库和本地仓库区别
