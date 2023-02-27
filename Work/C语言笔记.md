@@ -78,36 +78,12 @@ void ISR_2(void)
 
 
 
+代码优化
+
+* 局部变量尽量使用32位的int数据，需要16位数据时可以在计算完成后可以转换
+* 参数返回值避免使用char、short，即使参数范围小，也应使用int。
+* 使用减计数到零的循环结构，这样编译器就不需要给终止条件分配寄存器，而且与0比较的指令也可以省略
+* 循环计数值的循环继续条件为`i!=0`而不是`i>0`
+* 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[【DIY】树莓派ROS智能小车_Frank学习路上的博客-CSDN博客](https://blog.csdn.net/qq_40344790/article/details/127353700?spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-11-127353700-blog-117173141.pc_relevant_3mothn_strategy_and_data_recovery&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-11-127353700-blog-117173141.pc_relevant_3mothn_strategy_and_data_recovery&utm_relevant_index=16)
