@@ -90,7 +90,7 @@ $ git checkout -- <file> #恢复本地文件
 $git log -p
 
 #当前工作区与历史某一个版本之间的改动
-$git diff 某个版本的commitID -- <file>
+$git diff 某个版本的commitID .
 ```
 
 
