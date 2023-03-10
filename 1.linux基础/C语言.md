@@ -282,9 +282,9 @@ int main()
 
 ​	总体来说，目标文件被分为两种段：程序指令和程序数据。代码段属于程序指令，数据段和.bss段属于程序数据
 
+<img src="https://liepinote.oss-cn-beijing.aliyuncs.com/test/202303101308429.png" alt="image-20221106173032767" style="zoom:33%;" />
 
 
-<img src="./C语言.assets/image-20221106173032767.png" alt="image-20221106173032767" style="zoom:33%;" />
 
 
 
@@ -307,9 +307,9 @@ int main()
 
 ### 4.2 其余段和自定义段
 
-![image-20221106173725731](./C语言.assets/image-20221106173725731.png)
+![image-20221106173725731](https://liepinote.oss-cn-beijing.aliyuncs.com/test/202303101308530.png)
 
-![image-20221106173817710](./C语言.assets/image-20221106173817710.png)
+![image-20221106173817710](https://liepinote.oss-cn-beijing.aliyuncs.com/test/202303101308793.png)
 
 ### 4.3 文件头
 

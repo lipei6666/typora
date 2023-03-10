@@ -77,7 +77,7 @@ void vTaskPrioritySet( TaskHandle_t xTask,UBaseType_t uxNewPriority );//改变�
 
 状态转换图：
 
-![265783417220845](./assets/265783417220845.png)
+![265783417220845](https://liepinote.oss-cn-beijing.aliyuncs.com/test/202303101305748.png)
 
 ----------
 

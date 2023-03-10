@@ -60,7 +60,7 @@
 * 节点使用此服务器来存储和检索运行时的参数
 * 适合存储静态。非二进制的配置参数，不适合存储动态变化的数据
 
-<img src="./assets/image-20230301112017462.png" alt="image-20230301112017462" style="zoom:80%;" />
+<img src="https://liepinote.oss-cn-beijing.aliyuncs.com/test/202303101304250.png" alt="image-20230301112017462" style="zoom:80%;" />
 
 
 
@@ -80,7 +80,7 @@
 
 
 
-<img src="./assets/image-20230301112456560.png" alt="image-20230301112456560" style="zoom:80%;" />
+<img src="https://liepinote.oss-cn-beijing.aliyuncs.com/test/202303101310799.png" alt="image-20230301112456560" style="zoom:80%;" />
 
 # 七、命令行工具
 
